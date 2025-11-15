@@ -1,5 +1,6 @@
 package concorrent.objectLock;
 
+import concorrent.objectLock.guardSuspensionDesignPattern.GuardedObject;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

@@ -1,4 +1,4 @@
-package concorrent.objectLock;
+package concorrent.objectLock.guardSuspensionDesignPattern;
 
 public class GuardedObject {
     private Object response;
