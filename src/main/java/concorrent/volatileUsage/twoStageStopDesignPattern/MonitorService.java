@@ -1,6 +1,5 @@
 package concorrent.volatileUsage.twoStageStopDesignPattern;
 
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import static java.lang.Thread.sleep;
@@ -11,11 +10,19 @@ public class MonitorService {
 
     private Thread monitorWorker;
 
+    private boolean starting;
+
     public void start(){
+        if(starting) return;
+        synchronized (this) {
+            if(starting) return;
+            starting = true;
+        }
         monitorWorker = new Thread(() -> {
             while (true) {
                 if (stop) {
                     log.info("stop......");
+                    log.info("deal with something last......");
                     break;
                 }
 
@@ -26,7 +33,6 @@ public class MonitorService {
                     log.info("wake up.....");
                 }
             }
-            log.info("deal with something last......");
         }, "Monitor");
         monitorWorker.start();
     }
