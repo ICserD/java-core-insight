@@ -16,6 +16,8 @@ public interface Account {
      */
     static void demo(Account account) throws InterruptedException {
         List<Thread> threads = new ArrayList<>();
+        long startTime = System.currentTimeMillis();
+
         for(int i = 0; i < 1000; i++){
             threads.add(new Thread(() -> {
                 account.withDraw(10);
@@ -29,5 +31,6 @@ public interface Account {
         }
 
         System.out.println("Now account leave money " + account.getBalance());
+        System.out.println("Time cost " + (System.currentTimeMillis() - startTime) + " ms");
     }
 }
