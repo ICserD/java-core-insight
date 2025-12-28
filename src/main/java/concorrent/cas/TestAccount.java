@@ -8,10 +8,12 @@ public class TestAccount {
         Account accountSynchronizedSafe = new AccountSynchronizedSafe(10000);
         Account accountCasSafe = new AccountCasSafe(new AtomicInteger(10000));
         Account accountCasAtomicInt = new AccountCasAtomicInt(10000);
+        Account accountCasMyAtomic = new AccountCasMyAtomic(10000);
 
         Account.demo(accountUnSafe);
         Account.demo(accountSynchronizedSafe);
         Account.demo(accountCasSafe);
         Account.demo(accountCasAtomicInt);
+        Account.demo(accountCasMyAtomic);
     }
 }
