@@ -1,6 +1,6 @@
 package concorrent.cas;
 
-import concorrent.atomics.AtomicInt;
+import concorrent.cas.atomics.AtomicInt;
 
 public class AccountCasAtomicInt implements Account{
     private final AtomicInt balance;

@@ -1,4 +1,4 @@
-package concorrent.atomics;
+package concorrent.cas.atomics;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 

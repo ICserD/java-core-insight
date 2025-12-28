@@ -1,4 +1,4 @@
-package concorrent.atomics;
+package concorrent.cas.atomics;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.IntUnaryOperator;
